@@ -1,0 +1,26 @@
+SETTING UP NODE AND REACT
+
+install node
+create new folder named 'react_app'
+	cd react_app
+create a new react app:
+	npx create-react-app test
+create express application named 'api':
+	npx express-generator api
+	cd api
+install required packages present in 'package.json' file:
+	npm install
+change port number in api>bin>www from 3000 to 9000. (line 15)
+create new file named expressAPI.js in api>routes folder.
+goto api>app.js. add these 2 lines of code:
+	var testAPIRouter = require('./routes/expressAPI');
+	app.use('/expressAPI', testAPIRouter);
+goto test>src>App.js:
+	make class as
+allow cross origin scripting and sharing:
+	npm install --save cors (in api folder)
+in api>app.js:
+	var cors = require('cors');
+	app.use(cors());
+run both api and test by npm start.
+goto http://localhost:3000/
